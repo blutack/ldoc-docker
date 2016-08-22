@@ -4,4 +4,4 @@ RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/re
 RUN apk add --update bash gcc make git lua lua-dev musl-dev luarocks@testing
 RUN luarocks-5.1 install penlight
 RUN git clone https://github.com/stevedonovan/LDoc.git
-RUN cd LDoc && make && make install && cd .. && rm -rf LDoc
+RUN cd LDoc && git checkout 1.4.6 && make && make install && cd .. && rm -rf LDoc
